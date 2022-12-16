@@ -1,4 +1,6 @@
+import os
 from copy import deepcopy
+
 
 def part_one() -> int:
     code: dict = {
@@ -10,7 +12,7 @@ def part_one() -> int:
 
     score: int = 0
 
-    with open('./puzzle.txt', 'r') as file:
+    with open(f'{os.path.dirname(__file__)}\\puzzle.txt', 'r') as file:
         for line in file:
             enemy, player = line.split()
 
@@ -33,7 +35,7 @@ def part_two() -> int:
 
     score: int = 0
 
-    with open('./puzzle.txt', 'r') as file:
+    with open(f'{os.path.dirname(__file__)}\\puzzle.txt', 'r') as file:
         for line in file:
             enemy, player = line.split()
 
@@ -49,8 +51,11 @@ def part_two() -> int:
 
 
 def main():
-    print(f'Part One: {part_one()}')
-    print(f'Part Two: {part_two()}')
+    print(
+        f'\N{File Folder}{os.path.dirname(__file__).split(chr(92))[-1]}:\n'
+        f'\t\N{pushpin}{part_one()}\n'
+        f'\t\N{pushpin}{part_two()}'
+    )
 
 
 if __name__ == '__main__':
