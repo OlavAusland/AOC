@@ -1,9 +1,6 @@
 import os
 import numpy as np
 
-class Section:
-    def __init__(self, _id):
-        self.id = _id
 
 pairs: list = []
 
@@ -34,14 +31,13 @@ def part_two():
     for pair in pairs:
         first, second = pair
 
-        first_arr = set(np.arange(first[0], first[1]+1))
-        second_arr = set(np.arange(second[0], second[1]+1))
+        first_arr = set(np.arange(first[0], first[1] + 1))
+        second_arr = set(np.arange(second[0], second[1] + 1))
 
         if first_arr & second_arr:
             answer += 1
 
     return answer
-
 
 
 def main():
