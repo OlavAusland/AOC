@@ -206,10 +206,7 @@ def part_one():
 def part_two():
     global explorer
 
-    explorer.directories = sorted(explorer.directories, key=lambda x: x.get_size())
-    print(explorer.directories[0].get_size(), explorer.directories[-1].get_size())
-
-    for directory in explorer.directories:
+    for directory in sorted(explorer.directories, key=lambda x: x.get_size()):
         if explorer.disk_memory - (explorer.used_memory - directory.get_size()) > 30000000:
             return directory.get_size()
 
